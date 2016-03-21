@@ -9,14 +9,12 @@
 	<description>简单的spring+mybatis的web应用</description>
 	
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>4.2.0.RELEASE</spring.version>
-		<junitversion>4.12</junitversion>
 	</properties>
 	
-
-	<!-- spring framework -->
+	<!-- 配置项目依赖 -->
 	<dependencies>
+		<!-- spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>

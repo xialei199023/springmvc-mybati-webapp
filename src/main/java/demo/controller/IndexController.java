@@ -4,16 +4,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Index¿ØÖÆÆ÷£¬À¹½ØÇëÇó²¢½øĞĞÒµÎñÂß¼­´¦Àí¡£
+ * Indexæ§åˆ¶å™¨ï¼Œæ‹¦æˆªè¯·æ±‚å¹¶è¿›è¡Œä¸šåŠ¡é€»è¾‘å¤„ç†ã€‚
  * @author xialei
- * @version 1.0 2016Äê3ÔÂ21ÈÕÏÂÎç8:38:45
+ * @version 1.0 2016å¹´3æœˆ21æ—¥ä¸‹åˆ8:38:45
  */
 @Controller
 public class IndexController {
 	
 	/**
-	 * Ö÷Ò³Ó³Éä¡£±íÊ¾À¹½Øurl pathÎª"/index"µÄÇëÇó¡£
-	 * @return ·µ»ØStringÀàĞÍµÄÊı¾İ£¬±íÊ¾²»¸½¼ÓÈÎºÎÊı¾İ£¬Ö±½Ó½«ÇëÇó×ª·¢µ½index.jsp¡£
+	 * ä¸»é¡µæ˜ å°„ã€‚è¡¨ç¤ºæ‹¦æˆªurl pathä¸º"/index"çš„è¯·æ±‚ã€‚
+	 * @return è¿”å›Stringç±»å‹çš„æ•°æ®ï¼Œè¡¨ç¤ºä¸é™„åŠ ä»»ä½•æ•°æ®ï¼Œç›´æ¥å°†è¯·æ±‚è½¬å‘åˆ°index.jspã€‚
 	 */
 	@RequestMapping("/index")
 	public String index() {
