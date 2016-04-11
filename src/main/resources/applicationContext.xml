@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<context:property-placeholder location="classpath:config.properties"/>
+
+	<!-- 配置数据连接池（C3P0） -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${dataSource.pool.driverClass}" />
+		<property name="jdbcUrl" value="${dataSource.pool.jdbcUrl}" />
+		<property name="user" value="${dataSource.pool.user}" />
+		<property name="password" value="${dataSource.pool.password}" />
+		<property name="maxPoolSize" value="${dataSource.pool.maxPoolSize}" />
+		<property name="minPoolSize" value="${dataSource.pool.minPoolSize}" />
+		<property name="initialPoolSize" value="${dataSource.pool.initialPoolSize}" />
+		<property name="maxIdleTime" value="${dataSource.pool.maxIdleTime}" />
+		<property name="acquireIncrement" value="${dataSource.pool.acquireIncrement}" />
+		<property name="idleConnectionTestPeriod" value="${dataSource.pool.idleConnectionTestPeriod}" />
+		<property name="unreturnedConnectionTimeout" value="${dataSource.pool.unreturnedConnectionTimeout}" />
+		<property name="checkoutTimeout" value="${dataSource.pool.checkoutTimeout}" />
+		<property name="acquireRetryAttempts" value="${dataSource.pool.acquireRetryAttempts}" />
+	</bean>
+
+	<!-- 配置数据库事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<import resource="classpath:spring-mybatis.xml"/>
+</beans>

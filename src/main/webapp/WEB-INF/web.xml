@@ -4,6 +4,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 	<display-name>springmvc+mybatis web项目</display-name>
 	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath:applicationContext.xml
+		</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
 	<!-- 过滤器，所有输出的数据都使用UTF-8编码 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
